@@ -2,7 +2,7 @@ var http = require('http');
 
 var fs = require('fs');
 
-var patch = require('path');
+var path = require('path');
 
 var mime = require('mime');
 
@@ -47,7 +47,7 @@ function serveStatic(response, cache, absPath){
 			} else {
 				send404(response); // send http 404 response
 			}
-		})
+		});
 	}
 }
 
