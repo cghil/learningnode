@@ -15,6 +15,7 @@ var cache = {};
 // first handle the sending of 404 errors when a file is requested that doesn't exist
 
 function send404(response){
+	console.log('404 error has been triggered')
 	response.writeHead(404, {'Content-Type': 'text/plain'});
 	response.write('Error 404 : resource not found');
 	response.end();
@@ -67,3 +68,7 @@ var server = http.createServer(function(request, response){ // create HTTP serer
 server.listen(3001, function(){
 	console.log('Server listening on port 3001');
 });
+
+
+var chatServer = require('./lib/chat_server');
+chatServer.listen(server);
